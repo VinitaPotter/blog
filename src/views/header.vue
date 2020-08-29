@@ -2,7 +2,12 @@
   <div class="header">
     <div v-if="post" class="post">
       <img :src="post.featured_image" alt class="featured_image" />
-      <a class="title" :href="post.short_URL" target="_blank" v-html="post.title" tag="h2"></a>
+      <router-link
+        class="title is-pointer"
+        v-html="post.title"
+        :to="{name: 'Post', params: {id: post.ID}}"
+        tag="h2"
+      ></router-link>
       <p class="excerpt" v-html="post.excerpt"></p>
       <p
         class="date"
@@ -36,7 +41,7 @@ export default {
   methods: {
     async getRecentPost() {
       let { data } = await axios.get(
-        "https://public-api.wordpress.com/rest/v1.1/sites/abiteofsojourn.wordpress.com/posts/?number=1&pretty=true&fields=id,title,date,short_URL,excerpt,featured_image"
+        "https://public-api.wordpress.com/rest/v1.1/sites/abiteofsojourn.wordpress.com/posts/?number=1&pretty=true&fields=ID,post_ID,title,date,short_URL,excerpt,featured_image"
       );
       this.post = data.posts[0];
     },

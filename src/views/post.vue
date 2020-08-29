@@ -1,7 +1,7 @@
 <template>
   <div class="single_post">
     <img v-if="post.featured_image" :src="post.featured_image" alt class="featured_image" />
-    <h1>{{post.title}}</h1>
+    <h1 v-html="post.title"></h1>
     <div v-html="post.content"></div>
     <div>
       <a :href="post.short_URL">See it on the blog</a>
@@ -16,15 +16,17 @@ export default {
   data() {
     return {
       post: null,
+      id: null,
     };
   },
   created() {
+    this.id = this.$route.params.id;
     this.getPost();
   },
   methods: {
     async getPost() {
       let { data } = await axios.get(
-        `https://public-api.wordpress.com/rest/v1.1/sites/abiteofsojourn.wordpress.com/posts/${this.$route.params.id}?pretty=true&fields=ID,title,date,short_URL,excerpt,content,featured_image`
+        `https://public-api.wordpress.com/rest/v1.1/sites/abiteofsojourn.wordpress.com/posts/${this.id}?pretty=true&fields=ID,title,date,short_URL,excerpt,content,featured_image`
       );
       this.post = data;
     },
@@ -55,13 +57,11 @@ export default {
       position: static;
     }
   }
+
   img {
-    max-width: 80vw;
+    max-width: 100vw;
     max-height: 40rem;
-    @media only screen and (max-width: 600px) {
-      width: 100vw;
-      height: auto;
-    }
+    object-fit: contain;
   }
 }
 </style>

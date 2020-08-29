@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="navbar">
-      <p class="logo">VinitaPotter</p>
+      <router-link :to="{name: 'Home'}" tag="p" class="logo">VinitaPotter</router-link>
 
       <div class="navbar-icons">
         <router-link :to="{name: 'About'}" tag="a">
