@@ -230,6 +230,11 @@
 </template>
 
  <style type="text/css" media="screen">
+@media only screen and (max-width: 600px) {
+  #gr_custom_widget_1598710836 {
+    display: none;
+  }
+}
 .gr_custom_container_1598710836 {
   /* customize your Goodreads widget container here*/
   border: 1px solid gray;

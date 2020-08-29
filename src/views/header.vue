@@ -47,12 +47,18 @@ export default {
 <style lang="scss" >
 .post {
   margin-right: 10%;
+  @media only screen and (max-width: 600px) {
+    margin-right: 0;
+  }
   .featured_image {
     width: 40vw;
     height: 24rem;
     display: block;
     object-fit: cover;
     margin-bottom: 1rem;
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
   }
   .title {
     font-size: 1.5rem;
@@ -76,5 +82,10 @@ export default {
 
 #retainable-rss-embed {
   width: 40vw;
+}
+@media only screen and (max-width: 600px) {
+  #rtb {
+    display: none;
+  }
 }
 </style>

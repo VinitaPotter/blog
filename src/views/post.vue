@@ -39,6 +39,11 @@ export default {
   color: rgba(41, 41, 41, 1);
   font-size: 17px;
   margin: 45rem auto 10rem auto;
+  @media only screen and (max-width: 600px) {
+    margin: 0;
+    max-width: 100vw;
+    overflow: hidden;
+  }
   .featured_image {
     width: 100vw;
     position: absolute;
@@ -46,10 +51,17 @@ export default {
     right: 0;
     max-height: 40rem;
     object-fit: cover;
+    @media only screen and (max-width: 600px) {
+      position: static;
+    }
   }
-  .img {
-    max-width: 80vw !important;
-    max-height: 40rem !important;
+  img {
+    max-width: 80vw;
+    max-height: 40rem;
+    @media only screen and (max-width: 600px) {
+      width: 100vw;
+      height: auto;
+    }
   }
 }
 </style>

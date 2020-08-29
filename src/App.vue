@@ -12,6 +12,11 @@
   line-height: 24px;
   letter-spacing: 0.5px;
 }
+@media only screen and (max-width: 600px) {
+  #app {
+    margin: 0;
+  }
+}
 
 .is-pointer {
   cursor: pointer;

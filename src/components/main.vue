@@ -3,7 +3,7 @@
     <div class="navbar">
       <p class="logo">VinitaPotter</p>
 
-      <div>
+      <div class="navbar-icons">
         <router-link :to="{name: 'About'}" tag="a">
           <img src="../assets/woman.svg" alt class="icon" />
         </router-link>
@@ -95,11 +95,26 @@ export default {
       cursor: pointer;
     }
   }
+  &-icons {
+    @media only screen and (max-width: 600px) {
+      position: fixed;
+      bottom: 0;
+      background: white;
+      width: 100%;
+      justify-content: space-evenly;
+      right: 0;
+      padding: 1rem;
+      border-top: 1px solid #9694e9;
+    }
+  }
 }
 .navigation {
   display: flex;
   justify-content: space-evenly;
   margin: 2rem 20rem;
+  @media only screen and (max-width: 600px) {
+    margin: 0;
+  }
   p {
     cursor: pointer;
     padding: 0.5rem 1rem;

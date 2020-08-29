@@ -68,6 +68,10 @@ export default {
   .recent {
     margin-right: 10%;
     width: 70%;
+    @media only screen and (max-width: 600px) {
+      margin-right: 0;
+      width: 100%;
+    }
   }
 }
 
