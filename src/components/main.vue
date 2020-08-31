@@ -101,10 +101,10 @@ export default {
       bottom: 0;
       background: white;
       width: 100%;
-      justify-content: space-evenly;
       right: 0;
       padding: 1rem;
       border-top: 1px solid #9694e9;
+      justify-content: space-between;
     }
   }
 }
@@ -149,6 +149,9 @@ export default {
     animation-fill-mode: pink;
     // padding: 6px;
     border-radius: 5px;
+  }
+  @media only screen and (max-width: 600px) {
+    margin: auto;
   }
 }
 </style>
