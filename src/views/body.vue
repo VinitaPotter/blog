@@ -6,15 +6,28 @@
           <router-link
             class="title is-pointer"
             v-html="post.title"
-            :to="{name: 'Post', params: {id: post.ID}}"
+            :to="{ name: 'Post', params: { id: post.ID } }"
             tag="h2"
           ></router-link>
           <p class="excerpt" v-html="post.excerpt"></p>
-          <p
-            class="date"
-          >Posted {{new Date(post.date).toLocaleString('en', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</p>
+          <p class="date">
+            Posted
+            {{
+              new Date(post.date).toLocaleString("en", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }}
+          </p>
         </div>
-        <img v-if="post.featured_image" :src="post.featured_image" alt class="thumbnail" />
+        <img
+          v-if="post.featured_image"
+          :src="post.featured_image"
+          alt
+          class="thumbnail"
+        />
       </div>
     </div>
     <div class="reviews">
@@ -28,7 +41,7 @@
 
 <script>
 import axios from "axios";
-import Goodread from "./goodreads";
+// import Goodread from "./goodreads";
 export default {
   data() {
     return {

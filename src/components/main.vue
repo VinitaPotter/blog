@@ -1,10 +1,12 @@
 <template>
   <div>
-    <div class="navbar">
-      <router-link :to="{name: 'Home'}" tag="p" class="logo">VinitaPotter</router-link>
+    <!-- <div class="navbar">
+      <router-link :to="{ name: 'Home' }" tag="p" class="logo"
+        >VinitaPotter</router-link
+      >
 
       <div class="navbar-icons">
-        <router-link :to="{name: 'About'}" tag="a">
+        <router-link :to="{ name: 'About' }" tag="a">
           <img src="../assets/woman.svg" alt class="icon" />
         </router-link>
         <a href="https://www.instagram.com/vinita_potter/">
@@ -22,35 +24,17 @@
       </div>
     </div>
 
-    <div class="navigation">
-      <p
-        @click="$router.push({ name: 'Home', query: { filter: 'coding' }})"
-        :class="{'selected' : $route.query && $route.query.filter == 'coding' }"
-      >Code</p>
-      <p
-        @click="$router.push({ name: 'Home', query: { filter: 'eccentric'}})"
-        :class="{'selected' : $route.query && $route.query.filter == 'eccentric'}"
-      >Mood</p>
-      <p
-        @click="$router.push({ name: 'Home', query: { filter: 'food'}})"
-        :class="{'selected' : $route.query && $route.query.filter == 'food'}"
-      >Food</p>
-      <p
-        @click="$router.push({ name: 'Home', query: { filter: 'travel'}})"
-        :class="{'selected' : $route.query && $route.query.filter == 'travel'}"
-      >Travel</p>
-    </div>
     <app-header v-if="!$route.query || !$route.query.filter" />
     <div class="divider"></div>
     <app-body></app-body>
-    <app-footer></app-footer>
+    <app-footer></app-footer> -->
   </div>
 </template>
 
 <script>
-import Header from "../views/header";
-import Body from "../views/body";
-import Footer from "../views/footer";
+// import Header from "../views/header";
+// import Body from "../views/body";
+// import Footer from "../views/footer";
 
 export default {
   data() {
@@ -59,11 +43,11 @@ export default {
     };
   },
 
-  components: {
-    "app-header": Header,
-    "app-body": Body,
-    "app-footer": Footer,
-  },
+  // components: {
+  //   "app-header": Header,
+  //   "app-body": Body,
+  //   "app-footer": Footer,
+  // },
 };
 </script>
 
