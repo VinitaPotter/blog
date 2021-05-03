@@ -27,7 +27,7 @@
     <div class="bottom">
       <p class="name">Vinita Potter</p>
       <p class="title">
-        And the day she finds the time to develope this website 🙂
+        And the day she finds the time to develop this website 🙂
       </p>
     </div>
   </div>
